@@ -17,6 +17,7 @@ public:
 	void atck(Player& target) const;
 	bool isAlive() const;
 	friend ostream& operator<<(ostream& os, const Player& obj);
+	static Player parseUnit(const string& name);
 
 
 private:
