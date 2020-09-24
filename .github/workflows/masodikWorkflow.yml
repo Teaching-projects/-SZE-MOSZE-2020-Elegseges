@@ -1,0 +1,21 @@
+name: kettoWorkflow
+
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+      - run: g++ -Wall *.cpp -o main
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+      - name: generate output
+        run: |
+          python runtest.py main output.txt
+      - name: check output
+        run: diff output.txt goodoutput.txt
