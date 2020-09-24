@@ -1,36 +1,37 @@
-#include "Player.h"
+#include <iostream>
+#include <string>
+#include "player.h"
 
-Player::Player(string name, int hp, int dmg) : name(name), hp(hp), dmg(dmg) {
-}
+Player::Player(string name, int HP, int DMG) : Name(name), Hp(HP), Dmg(DMG) {}
 
-Player::~Player()
+string Player::getName() const
 {
+	return Name;
+}
+int Player::getHp() const
+{
+	return Hp;
+}
+int Player::getDmg() const
+{
+	return Dmg;
 }
 
-string Player::getName() const{
-	return name;
+void Player::atck(Player& target) const {
+	cout << this->Name << " -> " << target.Name << endl;
+
+	if (target.Hp < this->Dmg) {
+		target.Hp = 0;
+	}
+	else {
+		target.Hp -= this->Dmg;
+	}
 }
 
-int Player::getHp() const {
-	return hp;
+bool Player::isAlive() const {
+	return this->Hp > 0;
 }
 
-int Player::getDmg() const{
-	return dmg;
-}
-
-void Player::print() const{
-	cout << getName() << ": HP: " << getHp() << ", Dmg: " << getDmg() << endl;
-}
-
-void Player::setHp(int h){
-	hp = h;
-}
-
-Player * Player::getKovetkezo() const{
-	return kovetkezo;
-}
-
-void Player::setKovetkezo(Player * kovetkezo){
-	this->kovetkezo = kovetkezo;
+ostream& operator<<(ostream& os, const Player& obj) {
+	return os << obj.getName() << ": HP: " << obj.getHp() << " DMG: " << obj.getDmg() << endl;
 }

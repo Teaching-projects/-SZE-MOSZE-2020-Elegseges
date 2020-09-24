@@ -1,27 +1,30 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include <iostream>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
-class Player{
+class Player
+{
+
 public:
-	Player(string name, int hp, int dmg);
-	~Player();
-	string getName()const;
+
+	Player(const string, const int, const int);
+	string getName() const;
 	int getHp() const;
 	int getDmg() const;
-	void print() const;
-	void setHp(int h);
-	Player* getKovetkezo() const;
-	void setKovetkezo(Player* kovetkezo);
+	void atck(Player& target) const;
+	bool isAlive() const;
+	friend ostream& operator<<(ostream& os, const Player& obj);
+
 
 private:
-	string name;
-	int hp, dmg;
-	Player* kovetkezo;
+	const string Name;
+	int Hp;
+	const int Dmg;
+
 };
 
 
-#endif // !ATTACK_H
+#endif
