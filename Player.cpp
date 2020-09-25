@@ -16,18 +16,18 @@ int Player::getDmg() const
 }
 
 void Player::atck(Player& target) const {
-	cout << this->Name << " -> " << target.Name << endl;
+	cout << Name << " -> " << target.Name << endl;
 
-	if (target.Hp < this->Dmg) {
+	if (target.Hp < Dmg) {
 		target.Hp = 0;
 	}
 	else {
-		target.Hp -= this->Dmg;
+		target.Hp -= Dmg;
 	}
 }
 
 bool Player::isAlive() const {
-	return this->Hp > 0;
+	return Hp > 0;
 }
 
 ostream& operator<<(ostream& os, const Player& obj) {
