@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "player.h"
+#include "Player.h"
 
 Player::Player(string name, int HP, int DMG) : Name(name), Hp(HP), Dmg(DMG) {}
 
