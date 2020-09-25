@@ -6,8 +6,8 @@ using namespace std;
 
 
 int main(int argc, char* argv[]) {
-	Player player1(argv[1], stoi(argv[2]), stoi(argv[3]));
-	Player player2(argv[4], stoi(argv[5]), stoi(argv[6]));
+	Player player1(argv[1], atoi(argv[2]), atoi(argv[3]));
+	Player player2(argv[4], atoi(argv[5]), atoi(argv[6]));
 
 	cout << player1 << player2 << endl;
 	while (player1.isAlive() && player2.isAlive()) {
