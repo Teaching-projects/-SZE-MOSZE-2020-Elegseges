@@ -10,7 +10,7 @@ class Player
 
 public:
 
-	Player(const string, const int, const int);
+	Player(const string&, const int&, const int&);
 	string getName() const;
 	int getHp() const;
 	int getDmg() const;

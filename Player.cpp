@@ -1,6 +1,6 @@
 #include "player.h"
 
-Player::Player(string name, int HP, int DMG) : Name(name), Hp(HP), Dmg(DMG) {}
+Player::Player(const string& name, const int& HP, const int& DMG) : Name(name), Hp(HP), Dmg(DMG) {}
 
 string Player::getName() const
 {
